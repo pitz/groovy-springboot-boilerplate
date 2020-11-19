@@ -1,6 +1,8 @@
 # Groovy & Spring Boot
 
-### Criando o seu projeto com o Sring Initializr
+-----
+
+#### Criando o seu projeto com o Sring Initializr
 
 Vamos criar o nosso esqueleto! Usando o **Spring Initializr** [https://start.spring.io/](https://start.spring.io/), crie o projeto com os seguintes parâmetros:
 
@@ -12,7 +14,9 @@ Vamos criar o nosso esqueleto! Usando o **Spring Initializr** [https://start.spr
 
 Pronto, basta confirmar e baixar o .zip do projeto criado e já conseguimos a nossa primeira versão compilável.
 
-### Configurando o nosso banco de dados MySQL
+-----
+
+#### Configurando o nosso banco de dados MySQL
 
 A configuração do BD no Spring é algo bem simples. Vamos configurar o `application.properties` para permitir que você crie suas tabelas automaticamente, utilizando a abordagem Code First. 
 
@@ -41,7 +45,9 @@ spring.jpa.hibernate.ddl-auto = update
 
 Basicamente é isso, por padrão o Spring irá definir a maioria das configurações e isso é o suficiente para este projeto. 
 
-### Criando nossas classes de domínio
+-----
+
+#### Criando nossas classes de domínio
 
 Para a criação de nossas classes de domínio, iremos precisar de uma BaseEntity. A BaseEntity irá conter algumas definições padrões em nossos sitema.
 
@@ -147,8 +153,9 @@ class Card extends BaseEntity {
 
 }
 ```
+-----
 
-### Criando um Repository
+#### Acessando o nosso banco de dados com repositórios
 
 Com os nossos domínios criados, iremos precisar de nossos **Repositories.** O repository será responsável por acessar os dados em nosso banco de dados.
 

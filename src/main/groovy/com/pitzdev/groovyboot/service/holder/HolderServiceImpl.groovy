@@ -2,15 +2,17 @@ package com.pitzdev.groovyboot.service.holder
 
 import com.pitzdev.groovyboot.domain.holder.Holder
 import com.pitzdev.groovyboot.repository.holder.HolderRepository
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 @Service
 class HolderServiceImpl implements HolderService {
 
-    HolderRepository holderRepository
+    @Autowired
+    private final HolderRepository holderRepository
 
     public List<Holder> getHolderList() {
-        return holderRepository.findAll {}.toList()
+        return holderRepository.findAll()
     }
 
     public Holder getHolder(Long id) {
@@ -23,9 +25,8 @@ class HolderServiceImpl implements HolderService {
         holder.cpfCnpj = holderInfo.cpfCnpj
         holder.email = holderInfo.email
         holder.birthDate = holderInfo.birthDate
-
-        holderRepository.save(holder)
-        // Implementar regras.
+        holder.dateCreated = new Date()
+        holder = holderRepository.save(holder)
+        return holder
     }
-
 }
